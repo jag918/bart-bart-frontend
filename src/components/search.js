@@ -12,3 +12,6 @@ class Search extends Component {
 }
 
 export default Search;
+
+
+// search by location first!

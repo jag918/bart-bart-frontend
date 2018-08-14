@@ -1,10 +1,23 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom'
 
 class DogItem extends Component {
   render() {
+    console.log("dog item",this.props)
     return (
-      <div>item</div>
+      <div>
+        <img alt={this.props.animal.name} src={this.props.animal.image} onClick= {()=> {
+          this.props.selectedAnimal(this.props.animal)
+          this.props.history.push(`/animals/${this.props.animal.id}`)
+          }
+        }/>
+      </div>
     )
   }
 }
-export default DogItem;
+
+// <h3> Name: {this.props.animal.name} </h3>
+
+
+
+export default withRouter(DogItem);

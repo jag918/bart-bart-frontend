@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import '../homepage.css'
+import DogPic from '../media/Combined Shape.svg'
 
 class Homepage extends Component {
   render() {
     return (
-      <h1>hello</h1>
+      <div className='Homepage'>
+        <h1>homepage</h1>
+        <img style={{height:'500px'}} alt='dog-logo' src={DogPic}/>
+      </div>
+
     )
   }
 }
