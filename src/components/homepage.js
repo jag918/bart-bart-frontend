@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
 import '../homepage.css'
-import DogPic from '../media/Combined Shape.svg'
+
+import Standing from '../media/standing.svg'
+import Sitting from '../media/sitting.svg'
+import Laying from '../media/laying.svg'
+
 
 class Homepage extends Component {
   render() {
     return (
-      <div className='Homepage'>
-        <h1>homepage</h1>
-        <img style={{height:'500px'}} alt='dog-logo' src={DogPic}/>
+      <div className='homepage'>
+        <h1 className= 'header'>Bart Bart</h1>
+        <img className = 'laying-img' alt='dog-laying' src={Laying}/>
+        <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
+        <img className = 'standing-img' alt='dog-standing' src={Standing}/>
+
       </div>
 
     )

@@ -1,3 +1,38 @@
-.Homepage {
-  color: pink;
+.homepage {
+  height: 5%;
+  width: 80%;
+  background-color: #4B00CC;
+  position: relative;
+  left: 10%;
+  right: 90%;
+  border-radius: 10px;
+
+
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+.header {
+  position: absolute;
+  left: 30%;
+  font-size: 75px;
+}
+.laying-img {
+  position: absolute;
+  height:80px;
+  text-align: right;
+  top: 20%;
+  left: 5%
+}
+.sitting-img {
+  position: absolute;
+  height:100px;
+  text-align: right;
+  top: 40%;
+  left:25%
+}
+.standing-img {
+  position: absolute;
+  height:100px;
+  text-align: right;
+  top: 60%;
+  left: 45%
 }

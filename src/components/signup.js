@@ -10,7 +10,6 @@ class SignUp extends Component {
   }
 
   handleChange = (e) => {
-    console.log('handle', e.target.name)
   this.setState({
     [e.target.name]: e.target.value
   })
@@ -18,14 +17,13 @@ class SignUp extends Component {
 
 handleSubmit = (e) => {
   e.preventDefault()
-  this.props.newUser(this.state)
-
+  this.props.newUser(this.state )
 }
   render() {
     return (
       <div>
-        <form id="sign-in" onSubmit={this.handleSubmit}>
-          <label htmlFor='username'>Username</label>
+        <form id="sign-up" onSubmit={this.handleSubmit}>
+          <label htmlFor='name'>name</label>
           <input type='text' name="name" onChange={this.handleChange}/>
           <label htmlFor='email'>Email</label>
           <input type='text' name="email" onChange={this.handleChange}/>

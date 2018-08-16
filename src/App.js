@@ -11,7 +11,7 @@ import {Switch, Route} from 'react-router-dom'
 class App extends Component {
   appDisplay = () => {
     return (
-      <div>
+      <div className='app'>
       <NavbarContainer/>
       <Switch >
         <Route exact path ='/' component={Homepage} />

@@ -1,14 +1,16 @@
 const initialState = {
   animals:[],
   animal: '',
-  name:'',
-  email:'',
-  password:''
+  user: {
+    id:'2',
+    name:'derek',
+    email:'',
+    password:''
+  },
+  favorite:""
 }
 
 const reducer = (state=initialState,action) => {
-  console.log("state",state)
-  console.log("actions", action)
   switch(action.type) {
     case 'LOAD_ANIMALS':
       return {
@@ -20,12 +22,21 @@ const reducer = (state=initialState,action) => {
       ...state,
       animal: action.payload.animal
     }
+    case 'SEARCH_ANIMAL':
+      return {
+        ...state,
+        animals: action.payload.animals
+      }
+    case 'FAVORITE_ANIMAL':
+      return {
+        ...state,
+        favorite: action.payload.animal
+      }
     default:
       return state
   }
 
 }
-
 
 
 

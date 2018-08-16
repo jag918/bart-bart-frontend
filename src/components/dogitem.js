@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom'
 
 class DogItem extends Component {
   render() {
-    console.log("dog item",this.props)
     return (
       <div>
         <img alt={this.props.animal.name} src={this.props.animal.image} onClick= {()=> {

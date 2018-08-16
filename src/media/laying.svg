@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="844px" height="582px" viewBox="0 0 844 582" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="123 227 136 227 160 214 185 214 208 214 227 220.5 245 220.5 272 227 289 227 302 227 322 220.5 356 214 374 182 392 143 392 115 392 96 374 82 374 59 374 40 392 14 410 14 423 28 446 40 459 40 481 40 481 28 498 14 510 0 529 0 529 14 529 28 529 40 529 50 541 59 553 69 563 69 571 82 595 82 610 89 623 89 634 89 643 96 643 113.5 643 129 643 150 634 163 610 175 595 182 578 191 571 191 563 205 553 214 553 220.5 541 240 529 254 529 287 529 306 541 330 553 354 563 371 571 386 571 401 578 411 595 420 610 428 643 440 676 448 717 459 748 470 789 477 817 484 836 495 844 506 836 506 817 516 782 516 738 506 698 495 676 495 643 495 623 495 571 495 541 484 529 470 498 448 483.5 448 498 470 498 495 541 506 595 516 653 530 717 540 717 549 729 549 729 565 706 565 653 565 602 549 529 540 466 530 430 530 410 506 403 495 374 495 302 495 245 477 193 470 147 477 147 495 147 506 123 506 94 506 83 495 60 495 26 495 19 477 19 459 0 448 0 428 0 401 0 371 0 344 0 306 26 282.5 60 254 94 240"></polygon>
+        <filter x="-1.0%" y="-1.5%" width="102.0%" height="106.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="17" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Path">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FCE4BD" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

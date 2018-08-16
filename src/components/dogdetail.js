@@ -9,8 +9,7 @@ class DogDetail extends Component {
         <h1>{this.props.animal.name}</h1>
         <h3>{this.props.animal.breed}</h3>
         <p>{this.props.animal.description}</p>
-
-
+        <button onClick = {()=> {this.props.favoriteAnimal(this.props.animal)}}> Favorite </button>
       </div>
     )
   }
