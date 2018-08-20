@@ -1,7 +1,12 @@
+.homepage {
+  width: 50%;
+  margin-left: 25%;
+}
+
 .header {
   margin-left: 10%;
   margin-top: 0%;
-  width: 300px;
+  width: 500px;
   /* display: none; */
   /* float: left; */
 

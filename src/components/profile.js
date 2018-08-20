@@ -14,11 +14,10 @@ class Profile extends Component {
   render() {
 
     return(
-      <div>
+      <div style={{textAlign:"center"}}>
       <h2>{this.props.user.name}</h2>
       <h2>{this.props.user.email}</h2>
-      <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
-      <img className = 'standing-img' alt='dog-standing' src={Standing}/>
+
       <Favorite />
       </div>
     )
@@ -37,3 +36,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 // export default Profile;
 export default connect(mapStateToProps,mapDispatchToProps)(Profile)
+
+// <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
+// <img className = 'standing-img' alt='dog-standing' src={Standing}/>
