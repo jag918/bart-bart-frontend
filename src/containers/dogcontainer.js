@@ -13,14 +13,24 @@ class DogContainer extends Component {
     this.props.getAnimals()
   }
 
+  selectedAnimalFunc = () => {
+    if (this.props.searchAnimals.length>0) {
+      return this.props.searchAnimals
+    } else {
+      return this.props.animals
+    }
+  }
+
   displayPage = () => {
     return (
     <Switch>
       <Route exact path = '/animals'
-      render={(props)=> <DogList {...props} animals={this.props.animals} selectedAnimal={this.props.selectedAnimal} /> }/>
-      <Route path='/animals/:id' render={(props)=> <DogDetail {...props} animal={this.props.animal} favoriteAnimal={this.props.favoriteAnimal}/>}/>
+      render={(props)=> <DogList {...props} animals={this.selectedAnimalFunc()} selectedAnimal={this.props.selectedAnimal} /> }/>
+      <Route path='/animals/:id' render={(props)=> <DogDetail {...props} favoriteAnimal={this.props.favoriteAnimal}/>}/>
     </Switch>
   )}
+
+
 
   render() {
     return (
@@ -35,7 +45,8 @@ const mapStateToProps = (state) => {
   return {
     animals: state.animals,
     animal: state.animal,
-    favorite: state.favorite
+    favorite: state.favorite,
+    searchAnimals:state.searchAnimals
   }
 }
 
@@ -44,7 +55,7 @@ const mapDispatchToProps = (dispatch) => {
     getAnimals:(data) => {dispatch(getAnimals(data))},
     selectedAnimal: animal => {dispatch(selectedAnimal(animal))},
     handleSearchChange: searched => {dispatch()},
-    favoriteAnimal: animal => {dispatch(favoriteAnimal(animal))}
+    favoriteAnimal: (animal, user) => {dispatch(favoriteAnimal(animal,user))}
   }
 }
 

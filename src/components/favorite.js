@@ -1,18 +1,17 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class Favorite extends Component {
   render() {
+    const getFavNames=this.props.favorite.map(fav => {return <Link to = {`/animals/${fav.id}`}><img alt={fav.name} src={fav.image}/></Link>})
     return (
       <div>
-        <h1>'Favorite'</h1>
-        <h2>{this.props.user.name}</h2>
-        <h2>{this.props.favorite}</h2>
+        {getFavNames}
       </div>
     )
   }
 }
-
 const mapStateToProps = (state) => {
   console.log(state)
   return {

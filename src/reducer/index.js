@@ -7,7 +7,8 @@ const initialState = {
     email:'',
     password:''
   },
-  favorite:""
+  favorite:[],
+  searchAnimals:[]
 }
 
 const reducer = (state=initialState,action) => {
@@ -30,14 +31,23 @@ const reducer = (state=initialState,action) => {
     case 'FAVORITE_ANIMAL':
       return {
         ...state,
-        favorite: action.payload.animal
+        favorite: [...state.favorite,action.payload.animal],
+        user: action.payload.user
+      }
+    case 'GET_USER':
+      return {
+        ...state,
+        user: action.payload.user,
+        favorite:action.payload.favorite
+      }
+    case 'SEARCHED_ANIMALS':
+      return {
+        ...state,
+        searchAnimals:[...action.payload.searchAnimals]
       }
     default:
       return state
   }
 
 }
-
-
-
 export default reducer

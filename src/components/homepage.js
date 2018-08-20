@@ -11,10 +11,6 @@ class Homepage extends Component {
     return (
       <div className='homepage'>
         <h1 className= 'header'>Bart Bart</h1>
-        <img className = 'laying-img' alt='dog-laying' src={Laying}/>
-        <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
-        <img className = 'standing-img' alt='dog-standing' src={Standing}/>
-
       </div>
 
     )
@@ -22,3 +18,7 @@ class Homepage extends Component {
 }
 
 export default Homepage;
+
+// <img className = 'laying-img' alt='dog-laying' src={Laying}/>
+// <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
+// <img className = 'standing-img' alt='dog-standing' src={Standing}/>

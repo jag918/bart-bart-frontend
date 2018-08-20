@@ -1,18 +1,71 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux'
 
+import {favoriteAnimal} from "../actions"
 
 class DogDetail extends Component {
+  state={
+    animal:{
+      name:"",
+      email:"",
+      zipCode:"",
+      breed:"",
+      description:"",
+      image:""
+    }
+  }
+  componentDidMount() {
+    const id = this.props.match.params.id
+    const user_id = this.props.user.id
+    let url = `http://localhost:3001//api/v1/animals/${id}`
+    if(user_id){
+      url += `?user_id=${this.props.user.id}`
+    }
+    fetch(url)
+    .then(r=>r.json())
+    .then(data=> {
+      this.setState({
+        animal: data.animal,
+        animal_favorited: data.animal_favorited
+      })
+
+    })
+  }
+  handleButton = () => {
+    if (!!this.props.user && !this.state.animal_favorited) {
+      return  <button onClick = {()=> {
+        this.props.favoriteAnimal(this.state.animal, this.props.user)
+        this.setState({animal_favorited:true})
+      }}> Favorite </button>
+    }
+  }
   render() {
     return (
       <div>
-        <img alt={this.props.animal.name} src={this.props.animal.image} />
-        <h1>{this.props.animal.name}</h1>
-        <h3>{this.props.animal.breed}</h3>
-        <p>{this.props.animal.description}</p>
-        <button onClick = {()=> {this.props.favoriteAnimal(this.props.animal)}}> Favorite </button>
+        <img alt={this.state.animal.name} src={this.state.animal.image} />
+        <h1>{this.state.animal.name}</h1>
+        <p>{this.state.animal.email}</p>
+        <p>{this.state.animal.zipcode}</p>
+        <h3>{this.state.animal.breed}</h3>
+        <p>{this.state.animal.description}</p>
+
+        {this.handleButton()}
       </div>
     )
   }
 }
 
-export default DogDetail;
+const mapStateToProps = (state) => {
+  return {
+    user:state.user,
+    favorites: state.favorites
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    favoriteAnimal:(data,user) => {dispatch(favoriteAnimal(data,user))}
+  }
+}
+
+// export default DogDetail;
+export default connect(mapStateToProps,mapDispatchToProps)(DogDetail)

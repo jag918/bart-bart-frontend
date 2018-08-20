@@ -1,7 +1,9 @@
 .app {
     height: 100%;
     width: 100%;
-    color: white;
-    background-color: #1E00CC;
-    height: 10000px;
+    /* color: white; */
+    color: black;
+    background-color: #f8f8f8;
+    /* height: 10000px; */
+    font-family: Book Antiqua;
 }

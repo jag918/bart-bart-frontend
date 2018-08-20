@@ -1,19 +1,18 @@
-.homepage {
+/* .homepage {
   height: 5%;
   width: 80%;
-  background-color: #4B00CC;
   position: relative;
   left: 10%;
   right: 90%;
   border-radius: 10px;
-
-
-  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  background-image: url(./media/Group.svg);
 }
 .header {
   position: absolute;
   left: 30%;
-  font-size: 75px;
+  font-size: 100px;
+  top: 50%;
+  left: 68%;
 }
 .laying-img {
   position: absolute;
@@ -35,4 +34,4 @@
   text-align: right;
   top: 60%;
   left: 45%
-}
+} */

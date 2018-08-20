@@ -21,17 +21,61 @@ export const selectedAnimal = (animal) => {
     }
   }
 }
-
-export const favoriteAnimal = (animal) => {
-  console.log(animal)
+export const getSearchAnimals = (searched,animals) => {
+  console.log('searched animals',animals)
+  console.log('searched animals search',searched)
+  const searchAnimals = animals.filter(animal => animal.name.includes(searched) || animal.breed.includes(searched) )
+  console.log('searched animals result',searchAnimals)
   return {
-    type: 'FAVORITE_ANIMAL',
+    type: 'SEARCHED_ANIMALS',
     payload: {
-      animal
+      searchAnimals
     }
   }
 }
 
+export const favoriteAnimal = (animal, user) => {
+  console.log('animal', animal)
+  console.log('user', user)
+  return (dispatch) => {
+    const url = 'http://localhost:3001/api/v1/userfavorites'
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({animal_id:animal.id, user_id:user.id})
+    }
+    fetch(url, options)
+    .then( r => r.json())
+    .then (r => {
+      dispatch({
+        type: 'FAVORITE_ANIMAL',
+        payload: {
+          animal,
+          user
+        }
+      })
+    })
+  }
+}
+export const getUser = (user_id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/api/v1/users/${user_id}`)
+    .then(r=>r.json())
+    .then(r=> {
+      console.log(r)
+      dispatch({
+        type: 'GET_USER',
+        payload: {
+          "user":r.user,
+          "favorite":r.favorites
+        }
+      })
+    })
+  }
+}
 export function newUser(username, email, password){
   const options = {
     method: "POST",
