@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {getSearchAnimals} from "../actions"
+import "../search.css"
 
 class Search extends Component {
 
   render() {
     return (
       <div>
-        <input onChange= {(e)=> {this.props.getSearchAnimals(e.target.value, this.props.animals)}} type="text" placeholder={"Search Animals by name or breed"}  />
+        <input className="search" onChange= {(e)=> {this.props.getSearchAnimals(e.target.value, this.props.animals)}} type="text" placeholder={"search animals by name or breed"}  />
       </div>
     )
   }

@@ -3,16 +3,19 @@ import './App.css';
 
 import Homepage from './components/homepage';
 import NavbarContainer from './containers/navbarcontainer';
+
 import DogContainer from './containers/dogcontainer';
 import UserContainer from './containers/usercontainer'
 import SignContainer from './containers/signcontainer'
 import {Switch, Route} from 'react-router-dom'
+import SidebarContainer from './containers/sidebarcontainer'
 
 class App extends Component {
   appDisplay = () => {
     return (
       <div className='app'>
       <NavbarContainer/>
+      <SidebarContainer />
       <Switch >
         <Route exact path ='/' component={Homepage} />
         <Route path ='/animals' component={DogContainer} />

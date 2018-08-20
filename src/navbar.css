@@ -1,7 +1,8 @@
-.navbar {
-  margin-left: 0px;
-}
+.navbar-default {
+  margin-left: 33%;
+  border-color: #f8f8f8
 
-/* .nav-item {
-    margin-left: 500px;
-} */
+}
+a {
+  padding: 50px;
+ }

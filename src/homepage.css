@@ -1,37 +1,17 @@
-/* .homepage {
-  height: 5%;
-  width: 80%;
-  position: relative;
-  left: 10%;
-  right: 90%;
-  border-radius: 10px;
-  background-image: url(./media/Group.svg);
-}
 .header {
-  position: absolute;
-  left: 30%;
-  font-size: 100px;
-  top: 50%;
-  left: 68%;
+  margin-left: 10%;
+  margin-top: 0%;
+  width: 300px;
+  /* display: none; */
+  /* float: left; */
+
 }
-.laying-img {
-  position: absolute;
-  height:80px;
-  text-align: right;
-  top: 20%;
-  left: 5%
+
+.logo-img {
+  height: 500px;
+  width:500px;
+  margin-left: 40%;
+  /* display: inline; */
+  /* float: right; */
+  /* margin-top: 0%; */
 }
-.sitting-img {
-  position: absolute;
-  height:100px;
-  text-align: right;
-  top: 40%;
-  left:25%
-}
-.standing-img {
-  position: absolute;
-  height:100px;
-  text-align: right;
-  top: 60%;
-  left: 45%
-} */

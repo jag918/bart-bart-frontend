@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import '../homepage.css'
+import Logo from '../media/doggo2.svg'
 
-import Standing from '../media/standing.svg'
-import Sitting from '../media/sitting.svg'
-import Laying from '../media/laying.svg'
 
 
 class Homepage extends Component {
@@ -11,6 +9,8 @@ class Homepage extends Component {
     return (
       <div className='homepage'>
         <h1 className= 'header'>Bart Bart</h1>
+        <i className= 'header'>Pet Adoption App</i>
+        <img className = 'logo-img' alt='dog-logo' src={Logo}/>
       </div>
 
     )
@@ -18,7 +18,3 @@ class Homepage extends Component {
 }
 
 export default Homepage;
-
-// <img className = 'laying-img' alt='dog-laying' src={Laying}/>
-// <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
-// <img className = 'standing-img' alt='dog-standing' src={Standing}/>

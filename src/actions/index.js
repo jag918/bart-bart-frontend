@@ -24,7 +24,7 @@ export const selectedAnimal = (animal) => {
 export const getSearchAnimals = (searched,animals) => {
   console.log('searched animals',animals)
   console.log('searched animals search',searched)
-  const searchAnimals = animals.filter(animal => animal.name.includes(searched) || animal.breed.includes(searched) )
+  const searchAnimals = animals.filter(animal => animal.name.toLowerCase().includes(searched.toLowerCase()) || animal.breed.toLowerCase().includes(searched.toLowerCase()) )
   console.log('searched animals result',searchAnimals)
   return {
     type: 'SEARCHED_ANIMALS',

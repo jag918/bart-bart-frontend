@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
 import {favoriteAnimal} from "../actions"
+import "../dogdetail.css"
 
 class DogDetail extends Component {
   state={
@@ -41,7 +42,7 @@ class DogDetail extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="detail">
         <img alt={this.state.animal.name} src={this.state.animal.image} />
         <h1>{this.state.animal.name}</h1>
         <p>{this.state.animal.email}</p>
