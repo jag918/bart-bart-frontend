@@ -1,6 +1,12 @@
 .img {
-  height:190px;
-  width:200px;
-  margin-top: 25px;
+  height:100%;
+  width:100%;
+  overflow: hidden;
+  object-fit: cover;
   border-radius: 10px;
+}
+
+.dog-col {
+  height: 200px;
+  margin-top: 25px;
 }

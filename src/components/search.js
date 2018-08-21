@@ -8,11 +8,16 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <input className="search" onChange= {(e)=> {this.props.getSearchAnimals(e.target.value, this.props.animals)}} type="text" placeholder={"search animals by name or breed"}  />
+        <form class="form-inline" onChange= {(e)=> {this.props.getSearchAnimals(e.target.value, this.props.animals)}}>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
+        </form>
+
       </div>
     )
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {

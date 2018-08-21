@@ -6,15 +6,13 @@ import '../dogitem.css'
 class DogItem extends Component {
   render() {
     return (
-      <div>
-        <Col xs={4} md={4}>
+        <Col className= "dog-col" xs={4} md={4}>
           <img className= "img" alt={this.props.animal.name} src={this.props.animal.image} onClick= {()=> {
             this.props.selectedAnimal(this.props.animal)
             this.props.history.push(`/animals/${this.props.animal.id}`)
             }
           }/>
         </Col>
-      </div>
     )
   }
 }

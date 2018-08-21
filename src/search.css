@@ -1,5 +1,3 @@
-.search {
-  /* text-align: center; */
-  margin-left: 33%;
-  width: 250px;
+.form-inline {
+  text-align:right;
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DogItem from './dogitem'
 import Search from '../components/search';
-import {Grid, Row} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 
 class DogList extends Component {
@@ -20,12 +20,12 @@ class DogList extends Component {
 
 
     return (
-      <div>
-         <Search/>
-         <Grid>
-            {animalFunc()}
-         </Grid>
-      </div>
+      <Col md={8}>
+        <Row>
+          <Col md={4} mdOffset={8}><Search/></Col>
+        </Row>
+        {animalFunc()}
+      </Col>
     )
   }
 }

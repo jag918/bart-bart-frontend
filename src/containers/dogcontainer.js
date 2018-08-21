@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import DogDetail from '../components/dogdetail';
-
 import DogList from '../components/doglist';
-
 import {getAnimals,selectedAnimal, favoriteAnimal} from "../actions"
 import {connect} from 'react-redux'
 import {Switch, Route} from 'react-router-dom'
+import {Row, Grid} from 'react-bootstrap'
 
 class DogContainer extends Component {
 
@@ -23,13 +22,15 @@ class DogContainer extends Component {
 
   displayPage = () => {
     return (
-    <Switch>
-      <Route exact path = '/animals'
-      render={(props)=> <DogList {...props} animals={this.selectedAnimalFunc()} selectedAnimal={this.props.selectedAnimal} /> }/>
-      <Route path='/animals/:id' render={(props)=> <DogDetail {...props} favoriteAnimal={this.props.favoriteAnimal}/>}/>
-    </Switch>
+      <Row>
+        <DogList animals={this.selectedAnimalFunc()} selectedAnimal={this.props.selectedAnimal} />
+        <Switch>
+          <Route path='/animals/:id' render={(props)=> <DogDetail {...props} favoriteAnimal={this.props.favoriteAnimal}/>}/>
+        </Switch>
+      </Row>
   )}
-
+  // <Route exact path = '/animals'
+  // render={(props)=> <DogList {...props} animals={this.selectedAnimalFunc()} selectedAnimal={this.props.selectedAnimal} /> }/>
 
 
   render() {
