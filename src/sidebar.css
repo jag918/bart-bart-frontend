@@ -1,5 +1,16 @@
+div.sidebar {
+  position: sticky;
+  top: 0
+}
+
 .sidebar-col {
   margin-top: 50px;
   text-decoration: none;
   margin-left: 8%;
+
+}
+
+.sidebar-col:hover {
+    font-size: 15px;
+
 }

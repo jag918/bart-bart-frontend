@@ -4,4 +4,7 @@
   /* margin-left: 50%; */
   /* background-color: white; */
   margin-top: 50px;
+  /* position: -webkit-sticky; */
+  position: sticky;
+  top: 0;
 }

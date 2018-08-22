@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className='app'>
       <Row>
-      <Col md={2}>
+      <Col style={{position:"sticky", top:"0"}} md={2}>
       <SidebarContainer />
       </Col>
       <Col md={10}>
@@ -23,7 +23,7 @@ class App extends Component {
         <Route exact path ='/' component={Homepage} />
         <Route path ='/animals' component={DogContainer} />
         <Route exact path ='/sign' component={SignContainer} />
-        <Route exact path ='/user' component={UserContainer} />
+        <Route path ='/user' component={UserContainer} />
       </Switch>
       </Col>
       </Row>

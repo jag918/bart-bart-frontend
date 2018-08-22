@@ -25,7 +25,7 @@ class DogContainer extends Component {
       <Row>
         <DogList animals={this.selectedAnimalFunc()} selectedAnimal={this.props.selectedAnimal} />
         <Switch>
-          <Route path='/animals/:id' render={(props)=> <DogDetail {...props} favoriteAnimal={this.props.favoriteAnimal}/>}/>
+          <Route path='/animals/:id' key="list-detail" render={(props)=> <DogDetail {...props} favoriteAnimal={this.props.favoriteAnimal}/>}/>
         </Switch>
       </Row>
   )}

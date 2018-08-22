@@ -4,9 +4,17 @@
   overflow: hidden;
   object-fit: cover;
   border-radius: 10px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  opacity:1;
 }
 
 .dog-col {
   height: 200px;
   margin-top: 25px;
+}
+
+.img:hover {
+    opacity:.7;
+    transform: scale(1.1)
 }

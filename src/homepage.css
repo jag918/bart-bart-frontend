@@ -1,15 +1,17 @@
 .homepage {
-  width: 50%;
-  margin-left: 25%;
+  /* width: 50%;
+  margin-left: 25%; */
+  display: block;
+  position: relative;
+
 }
 
-.header {
-  margin-left: 10%;
-  margin-top: 0%;
-  width: 500px;
-  /* display: none; */
-  /* float: left; */
-
+.name {
+  position: relative;
+  animation: nameAnim 7s;
+  animation-direction: normal;
+  animation-delay: 3s;
+  opacity:0;
 }
 
 .logo-img {
@@ -19,4 +21,24 @@
   /* display: inline; */
   /* float: right; */
   /* margin-top: 0%; */
+  position: relative;
+  animation-name: logoAnim;
+  animation-duration: 10s;
+  opacity:0;
+  /* animation-iteration-count: infinite; */
+}
+.bart-img {
+  border-radius: 10px;
+  /* height: 300px;
+  width:400px; */
+}
+
+@keyframes nameAnim {
+  0% {opacity:0}
+  100% {opacity:1}
+}
+
+@keyframes logoAnim {
+  0% {transform: scale(.01); opacity:0}
+  100% {transform: scale(1); opacity:1}
 }

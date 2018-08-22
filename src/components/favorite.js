@@ -1,40 +1,34 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom'
+import {Col} from 'react-bootstrap'
+import '../dogitem.css'
 import {Link} from 'react-router-dom'
-import {Grid, Row, Col} from 'react-bootstrap'
-import "../dogitem.css"
+import {connect} from 'react-redux'
+import {selectedAnimal} from "../actions"
 
 class Favorite extends Component {
   render() {
-    const getFavNames =()=> {
-      let columnArray=[]
-      let threeArray=[]
-      for (let i=0; i<this.props.favorite.length; i+=3){
-        let displayThree=this.props.favorite.slice(i, i+3).map(fav => {
-          return <Link to = {`/animals/${fav.id}`}><img className="img" alt={fav.name} src={fav.image}/></Link>;
-        });
-        columnArray.push(<Col xs={4} md={4}> <Row> {displayThree} </Row> </Col>)
-        console.log(displayThree)
-      }
-      console.log('columnnnsss',columnArray)
-      return columnArray
-    }
+    console.log('props',this.props)
     return (
-      <div>
-        <Grid>
-           {getFavNames()}
-        </Grid>
-      </div>
+        <Col className= "dog-col" xs={4} md={4}>
+          <img className= "img" alt={this.props.favorite.name} src={this.props.favorite.image} onClick= {()=> {
+            this.props.selectedAnimal(this.props.favorite)
+            this.props.history.push(`/user/detailanimals/${this.props.favorite.id}`)
+            }
+          }/>
+        </Col>
     )
   }
 }
-const mapStateToProps = (state) => {
+
+const mapDispatchToProps = (dispatch) => {
   return {
-    favorite: state.favorite,
-    user: state.user
+    selectedAnimal: animal => {dispatch(selectedAnimal(animal))}
   }
 }
 
+export default withRouter(connect(null,mapDispatchToProps)(Favorite));
 
-// export default Favorite;
-export default connect(mapStateToProps)(Favorite)
+
+
+// <Link to = {`/user/detailanimals/${this.props.favorite.id}`}> <img className= "img" alt={this.props.favorite.name} src={this.props.favorite.image}/></Link>

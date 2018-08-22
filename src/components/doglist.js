@@ -22,6 +22,7 @@ class DogList extends Component {
     return (
       <Col md={8}>
         <Row>
+          <h1>Select a Pet </h1>
           <Col md={4} mdOffset={8}><Search/></Col>
         </Row>
         {animalFunc()}

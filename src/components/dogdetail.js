@@ -17,41 +17,38 @@ class DogDetail extends Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    const id = this.props.match.params.id
-    const user_id = this.props.user.id
+  getAnimalDetails(id, user_id){
     let url = `http://localhost:3001//api/v1/animals/${id}`
     if(user_id){
       url += `?user_id=${this.props.user.id}`
     }
-    fetch(url)
-    .then(r=>r.json())
-    .then(data=> {
+    return fetch(url).then(r=>r.json())
+  }
+
+  componentDidMount(){
+    const id = this.props.match.params.id
+    const user_id = this.props.user.id
+    this.getAnimalDetails(id, user_id).then(data=> {
       this.setState({
         animal: data.animal,
         animal_favorited: data.animal_favorited
       })
 
     })
-
   }
-  // componentDidMount() {
-  //   const id = this.props.match.params.id
-  //   const user_id = this.props.user.id
-  //   let url = `http://localhost:3001//api/v1/animals/${id}`
-  //   if(user_id){
-  //     url += `?user_id=${this.props.user.id}`
-  //   }
-  //   fetch(url)
-  //   .then(r=>r.json())
-  //   .then(data=> {
-  //     this.setState({
-  //       animal: data.animal,
-  //       animal_favorited: data.animal_favorited
-  //     })
-  //
-  //   })
-  // }
+
+  componentWillReceiveProps(nextProps) {
+    const id = nextProps.match.params.id
+    const user_id = nextProps.user.id
+    this.getAnimalDetails(id, user_id).then(data=> {
+      this.setState({
+        animal: data.animal,
+        animal_favorited: data.animal_favorited
+      })
+
+    })
+  }
+
   handleButton = () => {
     if (!!this.props.user && !this.state.animal_favorited) {
       return  <button onClick = {()=> {
@@ -62,7 +59,7 @@ class DogDetail extends Component {
   }
   render() {
     return (
-      <Col md={4}>
+      <Col md={4} style={{position:"sticky", top:"0", marginBottom:"10%"}}>
       <div className="detail">
         <img alt={this.state.animal.name} src={this.state.animal.image} />
         <h1>{this.state.animal.name}</h1>

@@ -14,7 +14,7 @@ export default class SidebarExampleSidebar extends Component {
     const { visible } = this.state
 
     return (
-      <div>
+      <div className="sidebar">
         <Grid>
           <Row>
             <Col className="sidebar-col">
