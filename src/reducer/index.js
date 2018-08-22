@@ -45,6 +45,11 @@ const reducer = (state=initialState,action) => {
         ...state,
         searchAnimals:[...action.payload.searchAnimals]
       }
+    case 'SIGN_IN':
+      return {
+        ...state,
+        user:[...action.payload.user]
+      }
     default:
       return state
   }

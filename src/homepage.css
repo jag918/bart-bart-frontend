@@ -10,8 +10,7 @@
   position: relative;
   animation: nameAnim 7s;
   animation-direction: normal;
-  animation-delay: 3s;
-  opacity:0;
+  /* animation-delay: 3s; */
 }
 
 .logo-img {
@@ -23,8 +22,8 @@
   /* margin-top: 0%; */
   position: relative;
   animation-name: logoAnim;
-  animation-duration: 10s;
-  opacity:0;
+  animation-duration: 8s;
+  /* opacity:0; */
   /* animation-iteration-count: infinite; */
 }
 .bart-img {

@@ -10,6 +10,7 @@ import Sitting from '../media/sitting.svg'
 import DogDetail from '../components/dogdetail';
 
 class Profile extends Component {
+  
   componentDidMount() {
     this.props.getUser(this.props.user.id)
   }
@@ -17,7 +18,7 @@ class Profile extends Component {
 
     return(
       <div style={{marginTop:"30px"}}>
-        <h2 style={{fontSize:"36px"}}>Select a Pet Hello {this.props.user.name.toUpperCase()}!</h2>
+        <h2 style={{fontSize:"36px"}}>Hello {this.props.user.name.toUpperCase()}!</h2>
         <i>Here are the pets you favorited</i>
         <h3>{this.props.user.email}</h3>
         <FavoriteContainer />

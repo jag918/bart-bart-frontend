@@ -11,28 +11,23 @@ import {Row, Col} from 'react-bootstrap'
 import SidebarContainer from './containers/sidebarcontainer'
 
 class App extends Component {
+
   appDisplay = () => {
     return (
       <div className='app'>
-      <Row>
-      <Col style={{position:"sticky", top:"0"}} md={2}>
-      <SidebarContainer />
-      </Col>
-      <Col md={10}>
-      <Switch >
-        <Route exact path ='/' component={Homepage} />
-        <Route path ='/animals' component={DogContainer} />
-        <Route exact path ='/sign' component={SignContainer} />
-        <Route path ='/user' component={UserContainer} />
-      </Switch>
-      </Col>
-      </Row>
-
-      {/*<NavbarContainer/>
-      <Homepage />
-      <DogContainer />
-      <UserContainer />
-      <SignContainer/> */}
+        <Row>
+          <Col style={{position:"sticky", top:"0"}} md={2}>
+            <SidebarContainer />
+            </Col>
+            <Col md={10}>
+            <Switch >
+              <Route exact path ='/' component={Homepage} />
+              <Route path ='/animals' component={DogContainer} />
+              <Route exact path ='/sign' component={SignContainer} />
+              <Route path ='/user' component={UserContainer} />
+            </Switch>
+          </Col>
+        </Row>
       </div>
     )
   }
@@ -45,5 +40,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

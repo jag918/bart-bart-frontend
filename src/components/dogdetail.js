@@ -63,8 +63,8 @@ class DogDetail extends Component {
       <div className="detail">
         <img alt={this.state.animal.name} src={this.state.animal.image} />
         <h1>{this.state.animal.name}</h1>
-        <p>{this.state.animal.email}</p>
-        <p>{this.state.animal.zipcode}</p>
+        <p>email: {this.state.animal.email}</p>
+        <p>zipcode: {this.state.animal.zipcode}</p>
         <h3>{this.state.animal.breed}</h3>
         <p>{this.state.animal.description}</p>
 

@@ -93,5 +93,17 @@ export function existingUser(username,password,email) {
     body: JSON.stringify({user: { username, password, email }})
   }
   return (dispatch) => {
-    fetch( 'http://localhost:3001/api/v1/signin', options).then(r => r.json())}
+    fetch( 'http://localhost:3001/api/v1/signin', options)
+    .then(r => r.json())
+    .then(r => {
+      dispatch({
+        type: "SIGN_IN",
+        payload: {
+          "user":r.user
+        }
+      })
+
+    })
+  }
+
 }
