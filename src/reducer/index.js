@@ -9,7 +9,7 @@ const initialState = {
   },
   favorite:[],
   searchAnimals:[],
-  message:''
+  message:[]
 }
 
 const reducer = (state=initialState,action) => {
@@ -22,7 +22,7 @@ const reducer = (state=initialState,action) => {
     case 'LOAD_MESSAGE':
       return {
         ...state,
-        message: action.payload.message
+        message: action.payload.message.messages
       }
     case 'SELECTED_ANIMAL':
     return {

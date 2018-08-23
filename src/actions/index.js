@@ -45,6 +45,24 @@ export const getSearchAnimals = (searched,animals) => {
   }
 }
 
+export const getInputMessage = (content, user_id) => {
+  console.log('content', content)
+  return (dispatch) => {
+    const url = 'http://localhost:3001/api/v1/messages'
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({content: content, user_id: user_id})
+    }
+    fetch(url, options)
+    .then( r => console.log("success"))
+  }
+}
+
+
 export const favoriteAnimal = (animal, user) => {
   return (dispatch) => {
     const url = 'http://localhost:3001/api/v1/userfavorites'
@@ -97,7 +115,6 @@ export const getUser = (user_id) => {
     fetch(`http://localhost:3001/api/v1/users/${user_id}`)
     .then(r=>r.json())
     .then(r=> {
-      console.log(r)
       dispatch({
         type: 'GET_USER',
         payload: {
