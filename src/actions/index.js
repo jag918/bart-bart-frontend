@@ -12,6 +12,20 @@ export const getAnimals = () => {
     })
   }
 }
+export const getMessage = (user_id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/api/v1/messages/${user_id}`)
+    .then(r=> r.json())
+    .then(result => {
+      dispatch({
+        type: 'LOAD_MESSAGE',
+        payload: {
+          message:result
+        }
+      })
+    })
+  }
+}
 
 export const selectedAnimal = (animal) => {
   return {

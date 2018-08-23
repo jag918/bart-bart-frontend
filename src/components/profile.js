@@ -6,8 +6,8 @@ import {withRouter,Switch, Route} from 'react-router-dom'
 
 import Standing from '../media/standing.svg'
 import Sitting from '../media/sitting.svg'
-// import Laying from '../media/laying.svg'
 import DogDetail from '../components/dogdetail';
+import Message from './message';
 
 class Profile extends Component {
 
@@ -19,10 +19,11 @@ class Profile extends Component {
 
     return(
       <div style={{marginTop:"30px"}}>
-        <h2 style={{fontSize:"36px"}}>Hello {this.props.user.name.toUpperCase()}!</h2>
+        <h2 style={{fontSize:"36px"}}>Hello {this.props.user.name}!</h2>
+        <h4>Email: {this.props.user.email}</h4>
         <i>Here are the pets you favorited</i>
-        <h3>{this.props.user.email}</h3>
         <FavoriteContainer />
+        <Message/>
         <Switch>
           <Route path='/user/detailanimals/:id' key="profile-detail" render={(props)=> <DogDetail {...props} />}/>
         </Switch>
@@ -44,5 +45,5 @@ const mapDispatchToProps = (dispatch) => {
 // export default Profile;
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Profile))
 
-// <img className = 'sitting-img' alt='dog-sitting' src={Sitting}/>
-// <img className = 'standing-img' alt='dog-standing' src={Standing}/>
+
+// <Route path='/user/messages' key="profile-message" render={()=> <Message />}/>

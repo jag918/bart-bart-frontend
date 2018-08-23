@@ -8,7 +8,6 @@ import {selectedAnimal} from "../actions"
 
 class Favorite extends Component {
   render() {
-    console.log('props',this.props)
     return (
         <Col className= "dog-col" xs={4} md={4}>
           <img className= "img" alt={this.props.favorite.name} src={this.props.favorite.image} onClick= {()=> {

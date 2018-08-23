@@ -8,7 +8,8 @@ const initialState = {
     password:''
   },
   favorite:[],
-  searchAnimals:[]
+  searchAnimals:[],
+  message:''
 }
 
 const reducer = (state=initialState,action) => {
@@ -17,6 +18,11 @@ const reducer = (state=initialState,action) => {
       return {
         ...state,
         animals: action.payload.animals
+      }
+    case 'LOAD_MESSAGE':
+      return {
+        ...state,
+        message: action.payload.message
       }
     case 'SELECTED_ANIMAL':
     return {
