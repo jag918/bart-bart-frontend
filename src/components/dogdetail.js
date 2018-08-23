@@ -63,6 +63,7 @@ class DogDetail extends Component {
       return <button onClick={()=>{
         this.props.unfavoriteAnimal(this.state.animal,this.props.user)
         this.setState({animal_favorited:false})
+        this.props.history.goBack()
       }}>Unfavorite</button>
     }
   }
