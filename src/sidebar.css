@@ -5,12 +5,12 @@ div.sidebar {
 
 .sidebar-col {
   margin-top: 50px;
-  text-decoration: none;
+  text-decoration: none !important;
   margin-left: 8%;
 
 }
 
-.sidebar-col:hover {
-    font-size: 15px;
-
+.sidebar-col:hover  {
+  font: 15px;
+  color: pink !important;
 }

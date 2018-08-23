@@ -22,9 +22,9 @@
   /* margin-top: 0%; */
   position: relative;
   animation-name: logoAnim;
-  animation-duration: 8s;
+  animation-duration: 5s;
   /* opacity:0; */
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
 }
 .bart-img {
   border-radius: 10px;
@@ -38,6 +38,7 @@
 }
 
 @keyframes logoAnim {
-  0% {transform: scale(.01); opacity:0}
-  100% {transform: scale(1); opacity:1}
+  0% {transform: scale(.8); opacity:1}
+  50% {transform: scale(1); opacity:1}
+  100% {transform: scale(.8); opacity:1}
 }

@@ -34,6 +34,12 @@ const reducer = (state=initialState,action) => {
         favorite: [...state.favorite,action.payload.animal],
         user: action.payload.user
       }
+    case 'UNFAVORITE_ANIMAL':
+      const favoriteAnimals = state.favorite.filter((animal)=>animal.id != action.payload.animal_id)
+      return {
+        ...state,
+        favorite:favoriteAnimals
+      }
     case 'GET_USER':
       return {
         ...state,

@@ -22,10 +22,7 @@ export const selectedAnimal = (animal) => {
   }
 }
 export const getSearchAnimals = (searched,animals) => {
-  console.log('searched animals',animals)
-  console.log('searched animals search',searched)
   const searchAnimals = animals.filter(animal => animal.name.toLowerCase().includes(searched.toLowerCase()) || animal.breed.toLowerCase().includes(searched.toLowerCase()) )
-  console.log('searched animals result',searchAnimals)
   return {
     type: 'SEARCHED_ANIMALS',
     payload: {
@@ -35,8 +32,6 @@ export const getSearchAnimals = (searched,animals) => {
 }
 
 export const favoriteAnimal = (animal, user) => {
-  console.log('animal', animal)
-  console.log('user', user)
   return (dispatch) => {
     const url = 'http://localhost:3001/api/v1/userfavorites'
     const options = {
@@ -60,6 +55,29 @@ export const favoriteAnimal = (animal, user) => {
     })
   }
 }
+
+export const unfavoriteAnimal = (animal,user) => {
+  return (dispatch) => {
+    const url = 'http://localhost:3001/api/v1//users/delete_favorite'
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }, body: JSON.stringify ({animal_id:animal.id, user_id:user.id})}
+      fetch(url,options)
+      .then(r=>{
+        dispatch({
+          type: 'UNFAVORITE_ANIMAL',
+          payload: {
+            "animal_id":animal.id
+          }
+        })
+        console.log("deleted!")
+    })
+  }
+}
+
 export const getUser = (user_id) => {
   return (dispatch) => {
     fetch(`http://localhost:3001/api/v1/users/${user_id}`)

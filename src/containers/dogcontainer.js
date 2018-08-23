@@ -12,6 +12,7 @@ class DogContainer extends Component {
     this.props.getAnimals()
   }
 
+
   selectedAnimalFunc = () => {
     if (this.props.searchAnimals.length>0) {
       return this.props.searchAnimals
@@ -59,6 +60,8 @@ const mapDispatchToProps = (dispatch) => {
     favoriteAnimal: (animal, user) => {dispatch(favoriteAnimal(animal,user))}
   }
 }
+
+
 
 // export default DogContainer;
 export default connect(mapStateToProps,mapDispatchToProps)(DogContainer)

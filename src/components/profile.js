@@ -10,10 +10,11 @@ import Sitting from '../media/sitting.svg'
 import DogDetail from '../components/dogdetail';
 
 class Profile extends Component {
-  
+
   componentDidMount() {
     this.props.getUser(this.props.user.id)
   }
+
   render() {
 
     return(

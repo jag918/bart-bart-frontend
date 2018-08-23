@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {Col} from 'react-bootstrap'
 
-import {favoriteAnimal} from "../actions"
+import {favoriteAnimal, unfavoriteAnimal} from "../actions"
 import "../dogdetail.css"
 
 class DogDetail extends Component {
@@ -57,6 +57,15 @@ class DogDetail extends Component {
       }}> Favorite </button>
     }
   }
+
+  handleDeleteButton = () => {
+    if (!!this.props.user && this.state.animal_favorited) {
+      return <button onClick={()=>{
+        this.props.unfavoriteAnimal(this.state.animal,this.props.user)
+        this.setState({animal_favorited:false})
+      }}>Unfavorite</button>
+    }
+  }
   render() {
     return (
       <Col md={4} style={{position:"sticky", top:"0", marginBottom:"10%"}}>
@@ -69,6 +78,8 @@ class DogDetail extends Component {
         <p>{this.state.animal.description}</p>
 
         {this.handleButton()}
+        {this.handleDeleteButton()}
+
       </div>
       </Col>
     )
@@ -83,7 +94,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    favoriteAnimal:(data,user) => {dispatch(favoriteAnimal(data,user))}
+    favoriteAnimal:(data,user) => {dispatch(favoriteAnimal(data,user))},
+    unfavoriteAnimal:(data,user) => {dispatch(unfavoriteAnimal(data,user))}
   }
 }
 
